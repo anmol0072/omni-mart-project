@@ -1,0 +1,253 @@
+import { Product, Seller, Category, Coupon } from "@/types/marketplace";
+
+export const categories: Category[] = [
+  { id: "1", name: "Vegetables", icon: "🥬", slug: "vegetables", productCount: 245 },
+  { id: "2", name: "Fruits", icon: "🍎", slug: "fruits", productCount: 189 },
+  { id: "3", name: "Dairy", icon: "🥛", slug: "dairy", productCount: 132 },
+  { id: "4", name: "Grains & Cereals", icon: "🌾", slug: "grains", productCount: 198 },
+  { id: "5", name: "Spices", icon: "🌶️", slug: "spices", productCount: 312 },
+  { id: "6", name: "Beverages", icon: "🍵", slug: "beverages", productCount: 156 },
+  { id: "7", name: "Pulses & Lentils", icon: "🫘", slug: "pulses", productCount: 87 },
+  { id: "8", name: "Oils & Ghee", icon: "🫒", slug: "oils", productCount: 64 },
+  { id: "9", name: "Dry Fruits", icon: "🥜", slug: "dry-fruits", productCount: 95 },
+  { id: "10", name: "Snacks", icon: "🍿", slug: "snacks", productCount: 210 },
+  { id: "11", name: "Bakery", icon: "🍞", slug: "bakery", productCount: 78 },
+  { id: "12", name: "Frozen Foods", icon: "🧊", slug: "frozen", productCount: 45 },
+];
+
+export const sellers: Seller[] = [
+  {
+    id: "s1", name: "AgriCorp Global Ltd.", slug: "agricorp-global",
+    logo: "/images/sellers/fresh-farm-logo.png", description: "Premium organic produce sourced directly from tier-1 farms internationally.",
+    rating: 4.8, reviewCount: 1245, isVerified: true,
+    categories: ["Vegetables", "Fruits"], location: "Rotterdam, Netherlands",
+    totalProducts: 156, joinedDate: "2023-06-15",
+  },
+  {
+    id: "s2", name: "Axiom Commodities", slug: "axiom-commodities",
+    logo: "/images/sellers/spice-kingdom-logo.png", description: "Global distributor of the highest grade spices and commodities.",
+    rating: 4.9, reviewCount: 892, isVerified: true,
+    categories: ["Spices", "Dry Fruits"], location: "Dubai, UAE",
+    totalProducts: 89, joinedDate: "2023-03-20",
+  },
+  {
+    id: "s3", name: "Alpine Dairy Networks", slug: "alpine-dairy-networks",
+    logo: "/images/sellers/desi-dairy-logo.png", description: "Certified sustainable dairy networks supplying wholesale processors.",
+    rating: 4.6, reviewCount: 567, isVerified: true,
+    categories: ["Dairy"], location: "Zurich, Switzerland",
+    totalProducts: 45, joinedDate: "2023-09-10",
+  },
+  {
+    id: "s4", name: "Equator Grains Initiative", slug: "equator-grains-initiative",
+    logo: "/images/sellers/golden-grain-logo.png", description: "Bulk grains and cereals wholesale supplier to global enterprises.",
+    rating: 4.7, reviewCount: 423, isVerified: true,
+    categories: ["Grains & Cereals", "Pulses & Lentils"], location: "Chicago, IL",
+    totalProducts: 112, joinedDate: "2023-01-05",
+  },
+  {
+    id: "s5", name: "Verdant Beverage Co.", slug: "verdant-beverage-co",
+    logo: "/images/sellers/chai-more-logo.png", description: "Premium teas, coffees, and export-grade beverage leaves.",
+    rating: 4.5, reviewCount: 334, isVerified: false,
+    categories: ["Beverages"], location: "Colombo, Sri Lanka",
+    totalProducts: 67, joinedDate: "2024-01-20",
+  },
+  {
+    id: "s6", name: "Oleo Prime Extracts", slug: "oleo-prime-extracts",
+    logo: "/images/sellers/pure-oils-logo.png", description: "First-pressed global oils and pure extracts for wholesale food prep.",
+    rating: 4.8, reviewCount: 256, isVerified: true,
+    categories: ["Oils & Ghee"], location: "Madrid, Spain",
+    totalProducts: 34, joinedDate: "2023-11-01",
+  },
+];
+
+export const products: Product[] = [
+  {
+    id: "p1", name: "Organic Red Tomatoes", slug: "organic-red-tomatoes",
+    description: "Fresh, vine-ripened organic tomatoes. Perfect for salads, curries, and sauces. Grown without pesticides in the fertile lands of Maharashtra.",
+    category: "Vegetables", images: ["/images/products/tomatoes.jpg"], unit: "kg",
+    pricingTiers: [
+      { minQty: 1, maxQty: 10, price: 65 },
+      { minQty: 11, maxQty: 50, price: 55 },
+      { minQty: 51, maxQty: null, price: 45 },
+    ],
+    moq: 1, stock: 500, rating: 4.5, reviewCount: 89,
+    sellerId: "s1", sellerName: "AgriCorp Global Ltd.", isVerified: true,
+    discount: 10, status: "active",
+  },
+  {
+    id: "p2", name: "Kerala Cardamom (Elaichi)", slug: "kerala-cardamom",
+    description: "Premium grade green cardamom from the hills of Kerala. Rich aroma and intense flavor for your biryani, chai, and sweets.",
+    category: "Spices", images: ["/images/products/cardamom.jpg"], unit: "kg",
+    pricingTiers: [
+      { minQty: 1, maxQty: 5, price: 2400 },
+      { minQty: 6, maxQty: 20, price: 2100 },
+      { minQty: 21, maxQty: null, price: 1850 },
+    ],
+    moq: 1, stock: 200, rating: 4.9, reviewCount: 234,
+    sellerId: "s2", sellerName: "Axiom Commodities", isVerified: true,
+    discount: 0, status: "active",
+  },
+  {
+    id: "p3", name: "Farm Fresh Paneer", slug: "farm-fresh-paneer",
+    description: "Soft, fresh paneer made from pure buffalo milk. No preservatives. Ideal for paneer butter masala, tikka, and more.",
+    category: "Dairy", images: ["/images/products/paneer.jpg"], unit: "kg",
+    pricingTiers: [
+      { minQty: 1, maxQty: 5, price: 340 },
+      { minQty: 6, maxQty: 20, price: 310 },
+      { minQty: 21, maxQty: null, price: 280 },
+    ],
+    moq: 1, stock: 150, rating: 4.6, reviewCount: 156,
+    sellerId: "s3", sellerName: "Alpine Dairy Networks", isVerified: true,
+    discount: 5, status: "active",
+  },
+  {
+    id: "p4", name: "Basmati Rice (1121)", slug: "basmati-rice-1121",
+    description: "Premium long-grain 1121 Basmati rice. Extra-long grains, perfect for biryani and pulao. Aged for 2 years.",
+    category: "Grains & Cereals", images: ["/images/products/basmati-rice.jpg"], unit: "kg",
+    pricingTiers: [
+      { minQty: 5, maxQty: 25, price: 145 },
+      { minQty: 26, maxQty: 100, price: 125 },
+      { minQty: 101, maxQty: null, price: 110 },
+    ],
+    moq: 5, stock: 2000, rating: 4.8, reviewCount: 312,
+    sellerId: "s4", sellerName: "Equator Grains Initiative", isVerified: true,
+    discount: 8, status: "active",
+  },
+  {
+    id: "p5", name: "Assam CTC Tea", slug: "assam-ctc-tea",
+    description: "Strong, full-bodied CTC tea from the gardens of Assam. Perfect for your daily chai. Rich copper color with malty flavor.",
+    category: "Beverages", images: ["/images/products/assam-tea.jpg"], unit: "kg",
+    pricingTiers: [
+      { minQty: 1, maxQty: 10, price: 320 },
+      { minQty: 11, maxQty: 50, price: 280 },
+      { minQty: 51, maxQty: null, price: 250 },
+    ],
+    moq: 1, stock: 800, rating: 4.5, reviewCount: 178,
+    sellerId: "s5", sellerName: "Verdant Beverage Co.", isVerified: false,
+    discount: 12, status: "active",
+  },
+  {
+    id: "p6", name: "Cold-Pressed Mustard Oil", slug: "cold-pressed-mustard-oil",
+    description: "Pure kachi ghani mustard oil. Traditional cold-pressed method preserves natural flavor and nutrients.",
+    category: "Oils & Ghee", images: ["/images/products/mustard-oil.jpg"], unit: "litre",
+    pricingTiers: [
+      { minQty: 1, maxQty: 10, price: 195 },
+      { minQty: 11, maxQty: 50, price: 175 },
+      { minQty: 51, maxQty: null, price: 160 },
+    ],
+    moq: 1, stock: 600, rating: 4.7, reviewCount: 134,
+    sellerId: "s6", sellerName: "Oleo Prime Extracts", isVerified: true,
+    discount: 0, status: "active",
+  },
+  {
+    id: "p7", name: "Fresh Green Capsicum", slug: "fresh-green-capsicum",
+    description: "Crisp, fresh green capsicum (shimla mirch). Great for stir-fries, salads, and stuffed capsicum recipes.",
+    category: "Vegetables", images: ["/images/products/capsicum.jpg"], unit: "kg",
+    pricingTiers: [
+      { minQty: 1, maxQty: 10, price: 80 },
+      { minQty: 11, maxQty: 50, price: 68 },
+      { minQty: 51, maxQty: null, price: 58 },
+    ],
+    moq: 1, stock: 300, rating: 4.3, reviewCount: 67,
+    sellerId: "s1", sellerName: "AgriCorp Global Ltd.", isVerified: true,
+    discount: 15, status: "active",
+  },
+  {
+    id: "p8", name: "Kashmiri Red Chilli Powder", slug: "kashmiri-red-chilli",
+    description: "Authentic Kashmiri lal mirch powder. Deep red color with mild heat. Perfect for tandoori dishes and gravies.",
+    category: "Spices", images: ["/images/products/kashmiri-chilli.jpg"], unit: "kg",
+    pricingTiers: [
+      { minQty: 1, maxQty: 5, price: 450 },
+      { minQty: 6, maxQty: 25, price: 390 },
+      { minQty: 26, maxQty: null, price: 340 },
+    ],
+    moq: 1, stock: 400, rating: 4.7, reviewCount: 198,
+    sellerId: "s2", sellerName: "Axiom Commodities", isVerified: true,
+    discount: 5, status: "active",
+  },
+  {
+    id: "p9", name: "Alphonso Mangoes (Hapus)", slug: "alphonso-mangoes",
+    description: "Premium Ratnagiri Alphonso mangoes. The king of mangoes with unmatched sweetness and aroma. Naturally ripened.",
+    category: "Fruits", images: ["/images/products/alphonso-mango.jpg"], unit: "dozen",
+    pricingTiers: [
+      { minQty: 1, maxQty: 5, price: 850 },
+      { minQty: 6, maxQty: 20, price: 750 },
+      { minQty: 21, maxQty: null, price: 650 },
+    ],
+    moq: 1, stock: 100, rating: 4.9, reviewCount: 445,
+    sellerId: "s1", sellerName: "AgriCorp Global Ltd.", isVerified: true,
+    discount: 0, status: "active",
+  },
+  {
+    id: "p10", name: "Toor Dal (Arhar)", slug: "toor-dal",
+    description: "Premium quality toor dal, cleaned and polished. Cooks quickly with a rich, earthy flavor. Staple for daily dal.",
+    category: "Pulses & Lentils", images: ["/images/products/toor-dal.jpg"], unit: "kg",
+    pricingTiers: [
+      { minQty: 5, maxQty: 25, price: 155 },
+      { minQty: 26, maxQty: 100, price: 140 },
+      { minQty: 101, maxQty: null, price: 125 },
+    ],
+    moq: 5, stock: 1500, rating: 4.4, reviewCount: 201,
+    sellerId: "s4", sellerName: "Equator Grains Initiative", isVerified: true,
+    discount: 6, status: "active",
+  },
+  {
+    id: "p11", name: "Cashew Nuts (W240)", slug: "cashew-nuts-w240",
+    description: "Premium W240 grade whole cashews from Goa. Perfectly roasted with just a hint of salt. Great for snacking or cooking.",
+    category: "Dry Fruits", images: ["/images/products/cashew-nuts.jpg"], unit: "kg",
+    pricingTiers: [
+      { minQty: 1, maxQty: 5, price: 890 },
+      { minQty: 6, maxQty: 25, price: 820 },
+      { minQty: 26, maxQty: null, price: 750 },
+    ],
+    moq: 1, stock: 350, rating: 4.8, reviewCount: 167,
+    sellerId: "s2", sellerName: "Axiom Commodities", isVerified: true,
+    discount: 0, status: "active",
+  },
+  {
+    id: "p12", name: "A2 Cow Ghee", slug: "a2-cow-ghee",
+    description: "Pure A2 desi cow ghee made using traditional bilona method. Rich golden color and authentic aroma. No additives.",
+    category: "Oils & Ghee", images: ["/images/products/a2-ghee.jpg"], unit: "litre",
+    pricingTiers: [
+      { minQty: 1, maxQty: 5, price: 750 },
+      { minQty: 6, maxQty: 15, price: 690 },
+      { minQty: 16, maxQty: null, price: 620 },
+    ],
+    moq: 1, stock: 200, rating: 4.9, reviewCount: 289,
+    sellerId: "s6", sellerName: "Oleo Prime Extracts", isVerified: true,
+    discount: 3, status: "active",
+  },
+];
+
+export const coupons: Coupon[] = [
+  { id: "c1", code: "WELCOME20", type: "percentage", value: 20, minOrderValue: 500, maxUses: 1, expiryDate: "2026-04-30", isActive: true },
+  { id: "c2", code: "SAVE100", type: "flat", value: 100, minOrderValue: 1000, maxUses: 3, expiryDate: "2026-03-31", isActive: true },
+  { id: "c3", code: "SPICE15", type: "percentage", value: 15, minOrderValue: 300, maxUses: 5, expiryDate: "2026-05-15", isActive: true },
+];
+
+export const heroBanners = [
+  {
+    id: 1,
+    title: "Fresh From Farm to Your Door",
+    subtitle: "Get organic vegetables & fruits at wholesale prices",
+    cta: "Shop Now",
+    bgClass: "bg-gradient-hero",
+    bgImage: "/images/hero-farm.jpg",
+  },
+  {
+    id: 2,
+    title: "Spice Up Your Business",
+    subtitle: "Premium Indian spices in bulk — direct from growers",
+    cta: "Explore Spices",
+    bgClass: "bg-gradient-accent",
+    bgImage: "/images/hero-spices.jpg",
+  },
+  {
+    id: 3,
+    title: "Flat ₹100 Off on First Order",
+    subtitle: "Use code WELCOME20 at checkout",
+    cta: "Claim Offer",
+    bgClass: "bg-gradient-primary",
+    bgImage: "/images/hero-offer.jpg",
+  },
+];
