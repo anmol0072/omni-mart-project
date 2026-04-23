@@ -16,7 +16,7 @@ Deno.serve(async (req) => {
       Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!
     );
 
-    const adminEmail = "admin@duniyamart.com";
+    const adminEmail = "admin@omnimart.com";
     const adminPassword = "Admin@123456";
 
     // Check if admin already exists
